@@ -1,5 +1,5 @@
 ## Guides 🔮
-The following are a set of guides on prompt engineering developed by us (DAIR.AI). Guides are work in progress.  
+以下是DAIR.AI开发的一套关于提示工程的指南
 
 - [Prompt Engineering - Introduction](/guides/prompts-intro.md)
 - [Prompt Engineering - Basic Prompting](/guides/prompts-basic-usage.md)
