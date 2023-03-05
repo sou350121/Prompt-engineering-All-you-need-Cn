@@ -1,10 +1,10 @@
 # Prompting Introduction
 
-Prompt engineering is a relatively new discipline for developing and optimizing prompts to efficiently use language models (LMs) for a wide variety of applications and research topics. Prompt engineering skills help to better understand the capabilities and limitations of large language models (LLMs). Researchers use prompt engineering to improve the capacity of LLMs on a wide range of common and complex tasks such as question answering and arithmetic reasoning. Developers use prompt engineering to design robust and effective prompting techniques that interface with LLMs and other tools.
+提示工程是一种相对较新的学科，用于开发和优化提示，以高效地利用语言模型（LMs）来解决各种应用和研究主题。提示工程技能有助于更好地了解大型语言模型（LLMs）的能力和局限性。研究人员使用提示工程来提高LLMs在广泛的常见和复杂任务上的能力，例如问答和算术推理。开发人员使用提示工程来设计稳健而有效的提示技术，与LLMs和其他工具进行接口。
 
-This guide covers the basics of standard prompts to provide a rough idea on how to use prompts to interact and instruct large language models (LLMs). 
+本指南涵盖了标准提示的基础知识，以提供如何使用提示与大型语言模型（LLMs）交互和指导的大致想法。
 
-All examples are tested with `text-davinci-003` (using OpenAI's playground) unless otherwise specified. It uses the default configurations, e.g., `temperature=0.7` and `top-p=1`.
+所有示例都在 text-davinci-003 上进行测试（使用OpenAI的playground），除非另有说明。它使用默认配置，例如 temperature=0.7 和 top-p=1。
 
 Topic:
 - [Basic Prompts](#basic-prompts)
@@ -17,9 +17,9 @@ Topic:
 
 ## Basic Prompts
 
-You can already achieve a lot with prompts, but the quality of results depends on how much information you provide it. A prompt can contain information like the `instruction` or `question` you are passing to the model and including other details such as `inputs` or `examples`. 
+你可以利用提示语获得很多信息，但结果的质量取决于你提供的信息量。提示语可以包含像instruction或question这样的信息，同时还可以包含其他细节，例如inputs或examples。
 
-Here is a basic example of a simple prompt:
+这里是一个简单提示语的基本示例：
 
 *Prompt*
 ```
@@ -33,11 +33,11 @@ blue
 The sky is blue on a clear day. On a cloudy day, the sky may be gray or white.
 ```
 
-As you can see, the language model outputs a continuation of strings that make sense give the context `"The sky is"`. The output might be unexpected or far from the task we want to accomplish. 
+正如您所看到的，语言模型输出了一系列与上下文“The sky is”相关联的字符串。输出可能是意料之外的，或与我们想要完成的任务相去甚远。
 
-This basic example also highlights the necessity to provide more context or instructions on what specifically we want to achieve.
+这个基本示例还突出了提供更多上下文或指示的必要性，以便更明确地指定我们想要实现的任务。
 
-Let's try to improve it a bit:
+让我们试着稍微改进一下：
 
 *Prompt:*
 ```
@@ -52,40 +52,40 @@ The sky is
  so  beautiful today.
 ```
 
-Is that better? Well, we told the model to complete the sentence so the result looks a lot better as it follows exactly what we told it to do ("complete the sentence"). This approach of designing optimal prompts to instruct the model to perform a task is what's referred to as **prompt engineering**. 
+这样好一些了吗？我们告诉模型去完成句子，所以结果看起来好很多，因为它完全按照我们告诉它要做什么的方式执行（“完成句子”）。这种通过设计最佳提示来指示模型执行任务的方法称为**提示工程**。
 
-The example above is a basic illustration of what's possible with LLMs today. Today's LLMs are able to perform all kinds of advanced tasks that range from text summarization to mathematical reasoning to code generation.
+上面的示例是当前使用LLMs可以实现的基本说明。现在的LLMs能够执行各种高级任务，从文本摘要到数学推理到代码生成。
 
 ---
 ## A Word on LLM Settings
 
-When working with prompts, you will be interacting with the LLM via an API or directly. You can configure a few parameters to get different results for your prompts. 
+当使用 prompts 时，您将通过 API 或直接与 LLM 进行交互。您可以配置一些参数，以获得不同的 prompts 结果。
 
-**Temperature** - In short, the lower the temperature the more deterministic the results in the sense that the highest probable next token is always picked. Increasing temperature could lead to more randomness encouraging more diverse or creative outputs. We are essentially increasing the weights of the other possible tokens. In terms of application, we might want to use lower temperature for something like fact-based QA to encourage more factual and concise responses. For poem generation or other creative tasks it might be beneficial to increase temperature. 
+**Temperature** - 简而言之，温度越低，结果越具有确定性，因为始终选择最有可能的下一个令牌。增加温度可能会导致更多的随机性，从而鼓励更多多样化或创意性的输出。我们本质上是增加了其他可能的令牌的权重。在应用方面，我们可能希望在基于事实的问答（fact-based QA）等任务中使用较低的温度，以鼓励更加简明扼要和基于事实的回答。对于诗歌生成或其他创意性任务，增加温度可能是有益的。
 
-**Top_p** - Similarly, with top_p, a sampling technique with temperature called nucleus sampling, you can control how deterministic the model is at generating a response. If you are looking for exact and factual answers keep this low. If you are looking for more diverse responses, increase to a higher value. 
+**Top_p** - 同样地，使用称为“核心采样”的带温度采样技术的 top_p 参数，可以控制模型生成响应的确定性程度。如果您正在寻找准确和事实性的答案，请保持此值较低。如果您正在寻找更多样化的响应，则将其增加到较高值。
 
-The general recommendation is to alter one not both.
+一般的建议是只更改一个参数而不是同时更改两个参数。
 
-Before starting with some basic examples, keep in mind that your results may vary depending on the version of LLM you are using. 
+在开始一些基本示例之前，请注意您的结果可能会因您使用的 LLM 版本而有所不同。
 
 ---
 ## Standard Prompts
 
-We have tried a very simple prompt above. A standard prompt has the following format:
+我们上面尝试了一个非常简单的提示。一个标准提示的格式如下：
 
 ```
 <Question>?
 ```
  
-This can be formatted into a QA format, which is standard in a lot of QA dataset, as follows:
+这可以格式化为问答格式，这是许多问答数据集中的标准格式，如下所示：
 
 ```
 Q: <Question>?
 A: 
 ```
 
-Given the standard format above, one popular and effective technique to prompting is referred to as few-shot prompting where we provide exemplars. Few-shot prompts can be formatted as follows:
+给定上述标准格式，一种流行且有效的提示技术被称为 few-shot prompting，其中我们提供样例。Few-shot prompts 可以格式化如下：
 
 ```
 <Question>?
@@ -102,7 +102,7 @@ Given the standard format above, one popular and effective technique to promptin
 ```
 
 
-And you can already guess that its QA format version would look like this:
+您已经猜到，它的 QA 格式版本将如下所示：
 
 ```
 Q: <Question>?
@@ -118,7 +118,7 @@ Q: <Question>?
 A:
 ```
 
-Keep in mind that it's not required to use QA format. The format depends on the task at hand. For instance, you can perform a simple classification task and give exemplars that demonstrate the task as follows:
+请记住，不一定需要使用问答格式。格式取决于手头的任务。例如，您可以执行一个简单的分类任务，并给出演示任务的示例，如下所示：
 
 *Prompt:*
 ```
@@ -133,44 +133,43 @@ What a horrible show! //
 Negative
 ```
 
-Few-shot prompts enable in-context learning which is the ability of language models to learn tasks given only a few examples. We will see more of this in action in the upcoming guides.
+Few-shot prompt可以实现上下文学习，即语言模型仅通过少量示例即可学习任务的能力。我们将在即将到来的指南中看到更多相关内容。
 
 ---
 ## Elements of a Prompt
 
-As we cover more and more examples and applications that are possible with prompt engineering, you will notice that there are certain elements that make up a prompt. 
+随着我们探讨越来越多的例子和应用程序，您会注意到某些元素组成了一个提示。一个提示可能包含以下任何一个组件：
 
-A prompt can contain any of the following components:
 
-**Instruction** - a specific task or instruction you want the model to perform
+**Instruction** - 希望模型执行的具体任务或指令
 
-**Context** - can involve external information or additional context that can steer the model to better responses
+**Context** - 可以涉及外部信息或额外的背景，可以引导模型做出更好的反应
 
-**Input Data** - is the input or question that we are interested to find a response for
+**Input Data** - 有兴趣找到答案的输入或问题。
 
-**Output Indicator** - indicates the type or format of output.
+**Output Indicator** - 表示输出的类型或格式。
 
-Not all the components are required for a prompt and the format depends on the task at hand. We will touch on more concrete examples in upcoming guides.
+并非所有组件都是提示的必备部分，其格式取决于手头的任务。在接下来的指南中，我们将涉及更多具体的示例。
 
 ---
 ## General Tips for Designing Prompts
 
-Here are some tips to keep in mind while you are designing your prompts:
+这里有一些提示，在你设计你的提示时要牢记。
 
 
 ### Start Simple
-As you get started with designing prompts, you should keep in mind that it is really an iterative process that requires lot of experimentation to get optimal results. Using a simple playground like OpenAI's or Cohere's is a good starting point. 
+当你开始设计提示语时，你应该记住，这其实是一个反复的过程，需要大量的实验来获得最佳的结果。使用像OpenAI的或Cohere的这样一个简单的游乐场是一个好的起点。
 
-You can start with simple prompts and keep adding more elements and context as you aim for better results. Versioning your prompt along the way is vital for this reason. As we read the guide you will see many examples where specificity, simplicity, and conciseness will often give you better results.
+你可以从简单的提示开始，然后不断添加更多的元素和背景，因为你的目标是获得更好的结果。为此，沿途对你的提示进行改版是至关重要的。当我们阅读指南时，你会看到许多例子，在这些例子中，具体性、简单性和简洁性往往会给你带来更好的结果。
 
-When you have big task that involves many different subtasks, you can try to break down the task into simpler subtasks and keep building up as you get better results. This avoids adding too much complexity to the prompt design process at the beginning.
+当你的大任务涉及到许多不同的子任务时，你可以尝试将任务分解成更简单的子任务，并在你获得更好的结果时不断建立起来。这样可以避免在一开始就给提示设计过程增加太多复杂性。
 
 ### The Instruction
-You can design effective prompts for various simple tasks by using commands to instruct the model what you want to achieve such as "Write", "Classify", "Summarize", "Translate", "Order", etc.
+你可以为各种简单的任务设计有效的提示，通过使用命令来指示模型你想要达到的目的 "Write", "Classify", "Summarize", "Translate", "Order", etc.
 
-Keep in mind that you also need to experiment a lot so see what works best. Trying different instructions with different keywords, context, and data and see what works best for your particular use case and task. Usually, the more specific and relevant the context is to the task you are trying to perform, the better. We will touch on the importance of sampling and adding more context in the upcoming guides.
+请记住，你还需要进行大量的实验，以便看到什么是最有效的。用不同的关键词、背景和数据尝试不同的指令，看看什么对你的特定用例和任务最有效。通常情况下，上下文与你要执行的任务越具体、越相关，就越好。我们将在接下来的指南中触及采样和添加更多上下文的重要性。
 
-Others recommend that instructions are placed at the beginning of the prompt. It's also recommended that some clear separator like "###" is used to separate the instruction and context. 
+还有人建议将指示放在提示的开头。还建议使用一些明确的分隔符，如 "##"，以分隔指令和上下文。
 
 For instance:
 
