@@ -14,15 +14,6 @@
 
 ---
 
-## Table of Contents
-
-- [Lecture](#lecture)
-- [Guides](#guides)
-- [Papers](#papers)
-- [Tools & Libraries](#tools--libraries)
-- [Datasets](#datasets)
-- [Blog, Guides, Tutorials and Other Readings](#blog-guides-tutorials-and-other-readings)
-
 ## 目录
 
 - [讲座](#lecture)
