@@ -53,7 +53,7 @@
 
 以下是关于提示工程的最新论文（按发布日期排序）。我们每天更新这些论文，并添加新的论文。我们每周都会将这些论文的摘要添加到上面的指南中：
 
-- 调查/概述：
+- 调查/概述 Surveys / Overviews：
 
   - [增强语言模型的探索](https://arxiv.org/abs/2302.07842)（2023 年 2 月）
   - [上下文学习调查](https://arxiv.org/abs/2301.00234)（2022 年 12 月）
@@ -62,7 +62,7 @@
   - [文本到图像生成的提示修饰器分类](https://arxiv.org/abs/2204.13988)（2022 年 4 月）
   - [训练、提示和预测：自然语言处理中提示方法的系统调查](https://arxiv.org/abs/2107.13586)（2021 年 7 月）
 
-- 技术/方法：
+- 技术/方法 Approaches/Techniques：
 
   - [可扩展的语言模型半监督学习提示生成](https://arxiv.org/abs/2302.09236)（2023 年 2 月）
   - [通过提示约束界定大型语言模型在开放文本生成中的能力范围](https://arxiv.org/abs/2302.09185)（2023 年 2 月）
@@ -125,7 +125,7 @@
   - [语言模型是少量学习者](https://arxiv.org/abs/2005.14165) (May 2020)
   - [我们如何知道语言模型知道什么？](https://direct.mit.edu/tacl/article/doi/10.1162/tacl_a_00324/96460/How-Can-We-Know-What-Language-Models-Know) (July 2020)
 
-- 应用：
+- 应用 Applications：
 
   - [格林童话：使用 Midjourney 进行提示工程以诠释童话故事](https://arxiv.org/abs/2302.08961) (2023 年 2 月)
   - [LabelPrompt：有效的基于提示的关系分类学习](https://arxiv.org/abs/2302.08068) (2023 年 2 月)
@@ -142,7 +142,7 @@
   - [驾驶 Copilot 和 Codex：高温、低提示，还是黑魔法？](https://arxiv.org/abs/2210.14699) (2022 年 10 月)
   - [从头开始编写情节预训练语言模型](https://aclanthology.org/2022.inlg-main.5) (2022 年 7 月)
 
-- 集合：
+- 集合 Collections：
   - [思维链论文](https://github.com/Timothyxxx/Chain-of-ThoughtsPapers)
   - [带代码的论文](https://paperswithcode.com/task/prompt-engineering)
   - [提示论文](https://github.com/thunlp/PromptPapers#papers)
@@ -151,7 +151,7 @@
 
 ## 工具和库
 
-#### (按名称排序)
+#### (按名称排序 Sorted by Name)
 
 - [AI 测试厨房](https://aitestkitchen.withgoogle.com)
 - [更好的提示](https://github.com/krrishdholakia/betterprompt)
@@ -188,7 +188,7 @@
 
 ## 数据集
 
-#### (按名称排序)
+#### (按名称排序 Sorted by Name)
 
 - [Anthropic 的 Red Team 数据集](https://github.com/anthropics/hh-rlhf/tree/master/red-team-attempts), [(paper)](https://arxiv.org/abs/2209.07858)
 - [Awesome ChatGPT 提示](https://huggingface.co/datasets/fka/awesome-chatgpt-prompts)
@@ -204,7 +204,7 @@
 
 ## 博客、指南、教程和其他文章
 
-#### (按名称排序)
+#### (按名称排序 Sorted by Name)
 
 - [3 Principles for prompt engineering with GPT-3](https://www.linkedin.com/pulse/3-principles-prompt-engineering-gpt-3-ben-whately)
 - [A beginner-friendly guide to generative language models - LaMBDA guide](https://aitestkitchen.withgoogle.com/how-lamda-works)
