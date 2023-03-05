@@ -9,9 +9,9 @@
 目前大部分的内容翻译於 https://github.com/dair-ai/Prompt-Engineering-Guide
 🎉 -dair-ai的提示工程讲座: 
 
-- [笔记本](https://github.com/dair-ai/Prompt-Engineering-Guide/blob/main/notebooks/pe-lecture.ipynb)和[幻灯片](https://github.com/dair-ai/Prompt-Engineering-Guide/blob/main/lecture/Prompt-Engineering-Lecture-Elvis.pdf)皆包含其中。
-- [dair-ai的 Discord](https://discord.gg/SKgkVT8BGJ)
-- [dair-ai推特](https://twitter.com/dair_ai)
+- [dair-ai 笔记本](https://github.com/dair-ai/Prompt-Engineering-Guide/blob/main/notebooks/pe-lecture.ipynb)和[幻灯片](https://github.com/dair-ai/Prompt-Engineering-Guide/blob/main/lecture/Prompt-Engineering-Lecture-Elvis.pdf)皆包含其中。
+- [dair-ai 的Discord](https://discord.gg/SKgkVT8BGJ)
+- [dair-ai 的推特](https://twitter.com/dair_ai)
 
 ---
 
