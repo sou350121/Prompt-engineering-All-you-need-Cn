@@ -1,10 +1,9 @@
-# 提示工程指南
-
-这份指南包含了一系列有关提示工程的最新论文、学习指南和工具。该仓库旨在为实践者和开发者提供研究和教育参考，但不能完整列出主题所有的资源。
+# 提示工程
 
 提示工程是一门相对较新的学科，旨在开发和优化提示，以有效地使用语言模型（LMs）用于各种应用和研究课题。提示工程技能有助于更好地了解大型语言模型（LLMs）的功能和局限性。研究人员利用提示工程来提高 LLMs 在各种常见和复杂任务（如问答和算术推理）上的能力。开发人员使用提示工程来设计与 LLMs 和其他工具接口的稳健有效的提示技术。
 
-受到开发 LLM 的高度兴趣的推动，我们创建了这本新的提示工程指南，其中包含了所有与提示工程相关的最新论文、学习指南、讲座、参考资料和工具。
+受到开发 LLM 的高度兴趣的推动，
+创建了这本新的提示工程指南，其中包含了所有与提示工程相关的最新论文、学习指南、讲座、参考资料和工具。
 
 --- 
 目前大部分的内容翻译於 https://github.com/dair-ai/Prompt-Engineering-Guide
@@ -29,11 +28,12 @@
 
 ## 讲座
 
-我们发布了一个 1 小时的讲座，提供了对提示技术，应用程序和工具的全面概述。
+- dair-ai  1 小时的讲座，提供了对提示技术，应用程序和工具的全面概述。
+  - [视频讲座](https://youtu.be/dOxUroR57xs)
+  - [带有代码的笔记本](https://github.com/dair-ai/Prompt-Engineering-Guide/blob/main/notebooks/pe-lecture.ipynb)
+  - [幻灯片](https://github.com/dair-ai/Prompt-Engineering-Guide/blob/main/lecture/Prompt-Engineering-Lecture-Elvis.pdf)
 
-- [视频讲座](https://youtu.be/dOxUroR57xs)
-- [带有代码的笔记本](https://github.com/dair-ai/Prompt-Engineering-Guide/blob/main/notebooks/pe-lecture.ipynb)
-- [幻灯片](https://github.com/dair-ai/Prompt-Engineering-Guide/blob/main/lecture/Prompt-Engineering-Lecture-Elvis.pdf)
+
 
 ---
 
