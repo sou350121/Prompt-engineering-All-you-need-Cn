@@ -171,7 +171,7 @@ Few-shot prompt可以实现上下文学习，即语言模型仅通过少量示�
 
 还有人建议将指示放在提示的开头。还建议使用一些明确的分隔符，如 "##"，以分隔指令和上下文。
 
-For instance:
+如:
 
 *Prompt:*
 ```
@@ -187,11 +187,11 @@ Text: "hello!"
 ```
 
 ### Specificity
-Be very specific about the instruction and task you want the model to perform. The more descriptive and detailed the prompt is, the better the results. This is particularly important when you have a desired outcome or style of generation you are seeking. There aren't specific tokens or keywords that lead to better results. It's more important to have a good format and descriptive prompt. In fact, providing examples in the prompt is very effective to get desired output in specific formats. 
+请务必详细描述你想让模型执行的指令和任务。描述和提示越详细，结果就越好。当你有特定的生成结果或风格时，这一点尤为重要。并没有特定的标记或关键词会带来更好的结果。拥有一个良好的格式和描述性的提示更加重要。实际上，在提示中提供示例非常有效，可以获得特定格式的输出结果。
 
-When designing prompts you should also keep in mind the length of the prompt as there are limitations regarding how long this can be. Thinking about how specific and detailed you should be is something to consider. Too many unnecessary details in not necessarily a good approach. The details should be relevant and contribute to the task at hand. This is something you will need to experiment with a lot. We encourage a lot of experimentation and iteration to optimize prompts for your applications.
+设计提示时，您还应考虑提示的长度，因为长度存在一定的限制。思考应该有多具体和详细是需要考虑的事情。不必要的细节不要太多。细节应该是相关的，并对任务有所贡献。这是您需要大量尝试的事情。我们鼓励大量实验和迭代，以优化您的应用程序的提示。
 
-As an example, let's try a simple prompt to extract specific information from a piece of text.
+作为一个例子，让我们尝试一个简单的提示，从一段文字中提取具体信息。
 
 *Prompt:*
 ```
@@ -208,28 +208,29 @@ Input: "Although these developments are encouraging to researchers, much is stil
 Place: Champalimaud Centre for the Unknown, Lisbon
 ```
 
-Input text is obtained from [this Nature article](https://www.nature.com/articles/d41586-023-00509-z).
+输入的文本来自 [this Nature article](https://www.nature.com/articles/d41586-023-00509-z).
 
 ### Avoid Impreciseness
 
-Given the tips above about being detailed and improving format, it's easy to fall into the trap of wanting to be too clever about prompts and potentially creating imprecise descriptions. It's often better to be specific and direct. The analogy here is very similar to effective communication -- the more direct, the more effective the message gets across.
+考虑到上面关于详细和改进格式的提示，我们很容易落入陷阱，想在提示方面做得太聪明，可能会造成不精确的描述。通常最好具体和直接。这里的类比与有效沟通非常相似——越直接，传达信息就越有效。
 
-For example, you might be interested in learning the concept of prompt engineering. You might try something like:
+例如，你可能对学习提示工程的概念感兴趣。你可以尝试这样的方法。
 
 ```
 Explain the concept prompt engineering. Keep the explanation short, only a few sentences, and don't be too descriptive.
 ```
 
-It's not clear from the prompt above how many sentences to use and what style. You might still somewhat get good responses with the above prompts but the better prompt would be one that is very specific, concise, and to the point. Something like:
+上面的提示中没有明确指出要用多少句话，用什么风格。通过上述提示，你可能还是会得到一些好的答复，但更好的提示是非常具体、简明和直奔主题的。S Something like:
 
 ```
 Use 2-3 sentences to explain the concept of prompt engineering to a high school student.
 ```
 
 ### To do or not to do?
-Another common tip when designing prompts is to avoid saying what not to do but say what to do instead. This encourages more specificity and focus on the details that lead to good responses from the model.
 
-Here is an example of movie recommendation chatbot failing at exactly what I don't want it to do because of how I wrote the instruction -- focusing on what not to do. 
+在设计提示时，另一个常见的提示是避免说不要做什么，而是说要做什么。这样可以鼓励更多的具体内容，并将注意力集中在细节上，从而使模型做出良好的反应。
+
+这里有一个电影推荐聊天机器人的例子，正是因为我写的指令的方式，我不想让它做什么，所以它失败了--集中在不做什么上。
 
 *Prompt:*
 ```
@@ -244,7 +245,7 @@ Agent:
 Sure, I can recommend a movie based on your interests. What kind of movie would you like to watch? Do you prefer action, comedy, romance, or something else?
 ```
 
-Here is a better prompt:
+这里有一个更好的提示。
 
 *Prompt:*
 ```
@@ -259,7 +260,7 @@ Agent:
 Sorry, I don't have any information about your interests. However, here's a list of the top global trending movies right now: [list of movies]. I hope you find something you like!
 ```
 
-Some of the examples above were adopted from the ["Best practices for prompt engineering with OpenAI API" article.](https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-openai-api)
+上面的一些例子来自于  ["Best practices for prompt engineering with OpenAI API" article.](https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-openai-api)
 
 
 ---
