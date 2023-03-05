@@ -22,9 +22,9 @@
 
 - [讲座](#讲座)
 - [指南](#指南)
-- [论文](#论文)
 - [工具和库](#工具和库)
 - [数据集](#数据集)
+- [论文](#论文)
 - [博客、指南、教程和其他阅读](#博客、指南、教程和其他阅读)
 
 ---
@@ -49,6 +49,59 @@
 - [提示工程-高级提示](/guides/prompts-advanced-usage.md)
 - [提示工程-对抗提示](/guides/prompt-adversarial.md)
 - [提示工程-杂项主题](/guides/prompt-miscellaneous.md)
+
+---
+
+## 工具和库
+
+#### (按名称排序 Sorted by Name)
+
+- [AI 测试厨房](https://aitestkitchen.withgoogle.com)
+- [更好的提示](https://github.com/krrishdholakia/betterprompt)
+- [DreamStudio](https://beta.dreamstudio.ai)
+- [DUST](https://dust.tt)
+- [Dyno](https://trydyno.com)
+- [EveryPrompt](https://www.everyprompt.com)
+- [GPT 索引](https://github.com/jerryjliu/gpt_index)
+- [GPTTools](https://gpttools.com/comparisontool)
+- [hwchase17/对抗性提示](https://github.com/hwchase17/adversarial-prompts)
+- [交互式作曲探索器](https://github.com/oughtinc/ice)
+- [LangChain](https://github.com/hwchase17/langchain)
+- [LearnGPT](https://www.learngpt.com)
+- [Lexica](https://lexica.art)
+- [织轴](https://github.com/socketteer/loom)
+- [Metaprompt](https://metaprompt.vercel.app/?task=gpt)
+- [OpenAI playground](https://beta.openai.com/playground)
+- [OpenPrompt](https://github.com/thunlp/OpenPrompt)
+- [Playground](https://playgroundai.com)
+- [Prodia](https://app.prodia.com/#/)
+- [Prompt Base](https://promptbase.com)
+- [Prompt Engine](https://github.com/microsoft/prompt-engine)
+- [OpenAI 的 DALL-E 2 的提示生成器](http://dalle2-prompt-generator.s3-website-us-west-2.amazonaws.com)
+- [Promptable](https://promptable.ai)
+- [PromptInject](https://github.com/agencyenterprise/PromptInject)
+- [Prompts.ai](https://github.com/sevazhidkov/prompts-ai)
+- [PromptSource](https://github.com/bigscience-workshop/promptsource)
+- [Scale SpellBook](https://scale.com/spellbook)
+- [sharegpt](https://sharegpt.com)
+- [ThoughtSource](https://github.com/OpenBioLink/ThoughtSource)
+- [可视提示构建器](https://tools.saxifrage.xyz/prompt)
+
+---
+
+## 数据集
+
+#### (按名称排序 Sorted by Name)
+
+- [Anthropic 的 Red Team 数据集](https://github.com/anthropics/hh-rlhf/tree/master/red-team-attempts), [(paper)](https://arxiv.org/abs/2209.07858)
+- [Awesome ChatGPT 提示](https://huggingface.co/datasets/fka/awesome-chatgpt-prompts)
+- [DiffusionDB](https://github.com/poloclub/diffusiondb)
+- [Midjourney Prompts](https://huggingface.co/datasets/succinctly/midjourney-prompts)
+- [P3 - 公共提示池](https://huggingface.co/datasets/bigscience/P3)
+- [PartiPrompts](https://parti.research.google)
+- [Real Toxicity Prompts](https://allenai.org/data/real-toxicity-prompts)
+- [Stable Diffusion Dataset](https://huggingface.co/datasets/Gustavosta/Stable-Diffusion-Prompts)
+- [WritingPrompts](https://www.reddit.com/r/WritingPrompts)
 
 ---
 
@@ -149,59 +202,6 @@
   - [思维链论文](https://github.com/Timothyxxx/Chain-of-ThoughtsPapers)
   - [带代码的论文](https://paperswithcode.com/task/prompt-engineering)
   - [提示论文](https://github.com/thunlp/PromptPapers#papers)
-
----
-
-## 工具和库
-
-#### (按名称排序 Sorted by Name)
-
-- [AI 测试厨房](https://aitestkitchen.withgoogle.com)
-- [更好的提示](https://github.com/krrishdholakia/betterprompt)
-- [DreamStudio](https://beta.dreamstudio.ai)
-- [DUST](https://dust.tt)
-- [Dyno](https://trydyno.com)
-- [EveryPrompt](https://www.everyprompt.com)
-- [GPT 索引](https://github.com/jerryjliu/gpt_index)
-- [GPTTools](https://gpttools.com/comparisontool)
-- [hwchase17/对抗性提示](https://github.com/hwchase17/adversarial-prompts)
-- [交互式作曲探索器](https://github.com/oughtinc/ice)
-- [LangChain](https://github.com/hwchase17/langchain)
-- [LearnGPT](https://www.learngpt.com)
-- [Lexica](https://lexica.art)
-- [织轴](https://github.com/socketteer/loom)
-- [Metaprompt](https://metaprompt.vercel.app/?task=gpt)
-- [OpenAI playground](https://beta.openai.com/playground)
-- [OpenPrompt](https://github.com/thunlp/OpenPrompt)
-- [Playground](https://playgroundai.com)
-- [Prodia](https://app.prodia.com/#/)
-- [Prompt Base](https://promptbase.com)
-- [Prompt Engine](https://github.com/microsoft/prompt-engine)
-- [OpenAI 的 DALL-E 2 的提示生成器](http://dalle2-prompt-generator.s3-website-us-west-2.amazonaws.com)
-- [Promptable](https://promptable.ai)
-- [PromptInject](https://github.com/agencyenterprise/PromptInject)
-- [Prompts.ai](https://github.com/sevazhidkov/prompts-ai)
-- [PromptSource](https://github.com/bigscience-workshop/promptsource)
-- [Scale SpellBook](https://scale.com/spellbook)
-- [sharegpt](https://sharegpt.com)
-- [ThoughtSource](https://github.com/OpenBioLink/ThoughtSource)
-- [可视提示构建器](https://tools.saxifrage.xyz/prompt)
-
----
-
-## 数据集
-
-#### (按名称排序 Sorted by Name)
-
-- [Anthropic 的 Red Team 数据集](https://github.com/anthropics/hh-rlhf/tree/master/red-team-attempts), [(paper)](https://arxiv.org/abs/2209.07858)
-- [Awesome ChatGPT 提示](https://huggingface.co/datasets/fka/awesome-chatgpt-prompts)
-- [DiffusionDB](https://github.com/poloclub/diffusiondb)
-- [Midjourney Prompts](https://huggingface.co/datasets/succinctly/midjourney-prompts)
-- [P3 - 公共提示池](https://huggingface.co/datasets/bigscience/P3)
-- [PartiPrompts](https://parti.research.google)
-- [Real Toxicity Prompts](https://allenai.org/data/real-toxicity-prompts)
-- [Stable Diffusion Dataset](https://huggingface.co/datasets/Gustavosta/Stable-Diffusion-Prompts)
-- [WritingPrompts](https://www.reddit.com/r/WritingPrompts)
 
 ---
 
