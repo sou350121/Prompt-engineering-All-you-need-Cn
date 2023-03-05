@@ -7,8 +7,8 @@
 受到开发 LLM 的高度兴趣的推动，我们创建了这本新的提示工程指南，其中包含了所有与提示工程相关的最新论文、学习指南、讲座、参考资料和工具。
 
 --- 
-目前大部分的內容翻譯於 https://github.com/dair-ai/Prompt-Engineering-Guide
-🎉 提示工程讲座正在此处直播！[笔记本](https://github.com/dair-ai/Prompt-Engineering-Guide/blob/main/notebooks/pe-lecture.ipynb)和[幻灯片](https://github.com/dair-ai/Prompt-Engineering-Guide/blob/main/lecture/Prompt-Engineering-Lecture-Elvis.pdf)皆包含其中。
+目前大部分的内容翻译於 https://github.com/dair-ai/Prompt-Engineering-Guide
+🎉 -dair-ai的提示工程讲座: [笔记本](https://github.com/dair-ai/Prompt-Engineering-Guide/blob/main/notebooks/pe-lecture.ipynb)和[幻灯片](https://github.com/dair-ai/Prompt-Engineering-Guide/blob/main/lecture/Prompt-Engineering-Lecture-Elvis.pdf)皆包含其中。
 
 - [dair-ai的 Discord](https://discord.gg/SKgkVT8BGJ)
 - [dair-ai推特](https://twitter.com/dair_ai)
