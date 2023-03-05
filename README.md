@@ -6,11 +6,15 @@
 创建了这本新的提示工程指南，其中包含了所有与提示工程相关的最新论文、学习指南、讲座、参考资料和工具。
 
 --- 
-目前大部分的内容翻译於 dair-ai https://github.com/dair-ai/Prompt-Engineering-Guide
+目前大部分的内容翻译於 dair-ai (https://github.com/dair-ai/Prompt-Engineering-Guide)
 
 - [dair-ai 笔记本](https://github.com/dair-ai/Prompt-Engineering-Guide/blob/main/notebooks/pe-lecture.ipynb)和[幻灯片](https://github.com/dair-ai/Prompt-Engineering-Guide/blob/main/lecture/Prompt-Engineering-Lecture-Elvis.pdf)皆包含其中。
 - [dair-ai 的Discord](https://discord.gg/SKgkVT8BGJ)
 - [dair-ai 的推特](https://twitter.com/dair_ai)
+
+- 平台
+  - [promptHero](https://prompthero.com/) - 提示搜寻平台，可通过高质素的 AI 生成图像，回溯用家所输入的提示。
+  - [promptbase](https://promptbase.com/) - 则是买卖「提示」平台，提示工程师靠出售专业提示获取收益，每个售价由 1.99 美元到 5 美元不等，平台可从每宗交易得到 20% 分成，但平台终究不能阻止买家免费公开「提示」
 
 ---
 
