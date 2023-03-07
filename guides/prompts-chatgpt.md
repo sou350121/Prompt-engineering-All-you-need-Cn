@@ -1,6 +1,6 @@
 # ChatGPT Prompt Engineering
 
-In this section, we cover the latest prompt engineering techniques for ChatGPT, including tips, applications, limitations, papers, and additional reading materials.
+在本节中，我们将介绍ChatGPT的最新提示工程技术，包括提示、应用、限制、论文和其他阅读材料。
 
 **Note that this section is under heavy development.**
 
@@ -12,18 +12,18 @@ Topics:
 ---
 ## ChatGPT Introduction
 
-ChatGPT is a new model [trained by OpenAI](https://openai.com/blog/chatgpt) that has the capability to interact in a conversational way. This model is trained to follow instructions in a prompt to provide appropriate responses in the context of a dialogue. ChatGPT can help with answering questions, suggest recipes, write lyrics in a certain style, generate code, and much more.
+ChatGPT是一个新的模型[由OpenAI训练](https://openai.com/blog/chatgpt)，它有能力以对话的方式进行互动。这个模型被训练成能够遵循提示中的指令，在对话的背景下提供适当的回应。ChatGPT可以帮助回答问题，建议食谱，用某种风格写歌词，生成代码，等等。
 
-ChatGPT is trained using Reinforcement Learning from Human Feedback (RLHF). While this model is a lot more capable than previous GPT iterations (and also trained to reduce harmful and untruthful outputs), it still comes with limitations. Let's cover some of the capabilities and limitations with concrete examples. 
+ChatGPT是使用人类反馈强化学习（RLHF）来训练的。虽然这个模型比以前的GPT迭代能力强很多（而且还经过训练以减少有害和不真实的输出），但它仍然有局限性。让我们通过具体的例子来介绍一些能力和限制。
 
-You can use the research preview of ChatGPT [here](chat.openai.com) but for the examples we will use the Chat mode on the OpenAI Playground.
+你可以使用ChatGPT的研究预览[这里](chat.openai.com)，但对于这些例子，我们将使用OpenAI Playground上的聊天模式。
 
 ---
 ## Reviewing The Conversation Task
 
-In one of the previous guides, we covered a bit about conversation capabilities and role prompting. We covered how to instruct the LLM to have a conversation in a specific style, with a specific intent, behavior, and identity.
+在以前的一份指南中，我们介绍了一些关于对话能力和角色提示的内容。我们介绍了如何指示LLM以特定的风格进行对话，有特定的意图、行为和身份。
 
-Let's review our previous basic example where we created a conversational system that's able to generate more technical and scientific responses to questions. 
+让我们回顾一下我们之前的基本例子，我们创建了一个对话系统，能够对问题产生更多的技术和科学回答。
 
 *Prompt:*
 ```
@@ -35,17 +35,17 @@ Human: Can you tell me about the creation of blackholes?
 AI:
 ```
 
-From the example above, you can see two important components:
-- the **intent** or explanation of what the chatbot is
-- the **identity** which instructs the style or tone the chatbot will use to respond
+从上面的示例中，您可以看到两个重要的组件：
+- 指示聊天机器人的**意图**或解释
+- 指示聊天机器人将用于响应的样式或语气的**身份**
 
-The simple example above works well with the text completion APIs that uses `text-davinci-003`. More recently, OpenAI [announced the ChatGPT APIs](https://openai.com/blog/introducing-chatgpt-and-whisper-apis), which is a more powerful and cheaper model called `gpt-3.5-turbo` was specifically built for this type of functionality (chat completions). In fact, OpenAI recommends this is as their best model even for non-chat use cases.  Other benefits of using the ChatGPT APIs are the significant cost reduction (90%) and efficiency. 
+上面的简单例子在使用`text-davinci-003'的文本补全API中运行良好。最近，OpenAI[宣布了ChatGPT APIs](https://openai.com/blog/introducing-chatgpt-and-whisper-apis)，这是一个更强大和更便宜的模型，称为`gpt-3.5-turbo`，是专门为这种类型的功能（聊天完成）建立的。事实上，OpenAI推荐这是他们的最佳模型，即使是在非聊天用例中。 使用ChatGPT APIs的其他好处是大大降低了成本（90%）和效率。
 
-Big companies like Snap Inc. and Instacart are already integrating conversational features powered by ChatGPT on their products that range from personalized recommendations to open-ended shopping goals.
+像Snap Inc.和Instacart这样的大公司已经在其产品上整合了由ChatGPT提供的对话功能，范围包括个性化推荐和开放式购物目标。
 
 ---
 ## Conversations with ChatGPT
-To begin demonstrating the capabilities of ChatGPT, we will use the chatbot assistant example above and discuss results. Compared to `text-davinci-003`, the `gpt-3.5-turbo` model that powers ChatGPT uses a chat format as input. The model expects a series of messages as input, and uses those to generate a response. 
+为了开始展示ChatGPT的能力，我们将使用上面的聊天机器人助手例子，并讨论结果。与`text-davinci-003`相比，支持ChatGPT的`gpt-3.5-turbo`模型使用聊天格式作为输入。该模型期望有一系列的信息作为输入，并使用这些信息来生成一个响应。
 
 *Input:*
 ```
@@ -60,11 +60,11 @@ USER: Can you tell me about the creation of black holes?
 ASSISTANT: Of course! Black holes are created when a massive star runs out of fuel and collapses under its own gravity. This collapse causes the star to become incredibly dense, with a gravitational field so strong that not even light can escape it. This point of no return is known as the event horizon. Once a star crosses the event horizon, it is considered a black hole...
 ```
 
-Note that in the example above, I have simplified the input and output but the ChatGPT chat completion API requires messages to be in a specific format. I have added a snapshot below of how this example would look using the `Chat Mode` in the OpenAI Playground:
+请注意，在上面的例子中，我已经简化了输入和输出，但ChatGPT聊天完成API要求消息必须是特定的格式。我在下面添加了一个快照，说明这个例子在OpenAI Playground中使用 "聊天模式 "会是什么样子。
 
 ![](../img/chatgpt-1.png)
 
-The more formal API call for our example would look something like the example below:
+对于我们的例子来说，更正式的API调用将看起来像下面的例子。
 
 ```python
 import openai
@@ -79,9 +79,9 @@ openai.ChatCompletion.create(
     ]
 )
 ```
-In fact, the way developers interact with ChatGPT in the future is expected to be done via the [Chat Markup Language](https://github.com/openai/openai-python/blob/main/chatml.md) (ChatML for short).
+事实上，未来开发者与ChatGPT的互动方式有望通过[聊天标记语言](https://github.com/openai/openai-python/blob/main/chatml.md)（简称ChatML）来完成。
 
-The chat format enables multi-turn conversations but it also supports single-turn tasks similar to what we used with `text-davinci-003`. This means we can use ChatGPT to perform similar tasks as what we have demonstrated for the original GPT models. For example, let's try to perform the following question answering task using ChatGPT:
+聊天格式可以实现多轮对话，但它也支持类似于我们在`text-davinci-003`中使用的单轮任务。这意味着我们可以使用ChatGPT来执行类似于我们为原始GPT模型所演示的任务。例如，让我们尝试用ChatGPT执行以下问题的回答任务。
 
 *Input:*
 ```
@@ -99,11 +99,11 @@ Answer:
 ASSISTANT: Mice.
 ```
 
-Keep in mind that I am adding the `USER` and `ASSISTANT` labels to better demonstrate how the task can be performed using ChatGPT. Here is the example using the Playground:
+请记住，我添加`USER'和`ASSISTANT'标签是为了更好地演示如何使用ChatGPT执行任务。下面是使用Playground的例子。
 
 ![](../img/chatgpt-classic.png)
 
-More formally, this is the API call (I've only included the message component of the request):
+更正式地说，这是API调用（我只包括请求的消息部分）。
 
 ```python
 CONTENT = """Answer the question based on the context below. Keep the answer short and concise. Respond \"Unsure about answer\" if not sure about the answer.
@@ -124,7 +124,7 @@ response = openai.ChatCompletion.create(
 )
 ```
 
-You can try out [this notebook](../notebooks/pe-chatgpt-intro.ipynb) to learn more about how to make calls to the ChatGPT APIs. 
+你可以尝试一下 [this notebook](../notebooks/pe-chatgpt-intro.ipynb) 以了解更多关于如何调用ChatGPT APIs的信息。
 
 ---
 
