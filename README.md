@@ -12,13 +12,14 @@
 - [dair-ai 的Discord](https://discord.gg/SKgkVT8BGJ)
 - [dair-ai 的推特](https://twitter.com/dair_ai)
 
-- 平台
+- 平台 (体验过推荐的)
   - [LangChain](https://github.com/hwchase17/langchain) - 将LLM与其他计算或知识来源相结合
   - [LlamaIndex](https://github.com/jerryjliu/gpt_index) - 轻松将 LLM 与您的外部数据连接起来，消除对提示大小限制的担忧。
   - [Lexica](https://lexica.art/) - Stable diffusion的搜索引擎
   - [PromptHero](https://prompthero.com/) - 提示搜寻平台，可通过高质素的 AI 生成图像，回溯用家所输入的提示。
   - [Promptbase](https://promptbase.com/) - 买卖「提示」平台，提示工程师靠出售专业提示获取收益，每个售价由 1.99 美元到 5 美元不等，平台可从每宗交易得到 20% 分成，但平台终究不能阻止买家免费公开「提示」
   - [Prompt Engine](https://github.com/microsoft/prompt-engine) - 这个 repo 包含一个 NPM 实用程序库，用于创建和维护大型语言模型 (LLM) 的提示。
+  - [promptly](https://trypromptly.com/) - 为提示编写和运行测试并自信地部署更改。
   - [Saxifrage](https://tools.saxifrage.xyz/prompt) - 视觉提示生成器
 
 ---
