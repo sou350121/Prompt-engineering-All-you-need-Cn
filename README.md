@@ -37,26 +37,27 @@
 
 ---
 
+## 指南
+
+以下是dair-ai 开发的提示工程指南。 dair-ai 指南正在研发中。(暂时我会每三天更新)
+
+- [Prompt Engineering - Introduction](/guides/prompts-intro.md)
+- [Prompt Engineering - Basic Prompting](/guides/prompts-basic-usage.md)
+- [Prompt Engineering - Advanced Prompting](/guides/prompts-advanced-usage.md)
+- [Prompt Engineering - Applications](/guides/prompts-applications.md)
+- [Prompt Engineering - ChatGPT](/guides/prompts-chatgpt.md)
+- [Prompt Engineering - Adversarial Prompting](/guides/prompts-adversarial.md)
+- [Prompt Engineering - Reliability](/guides/prompts-reliability.md)
+- [Prompt Engineering - Miscellaneous Topics](/guides/prompts-miscellaneous.md)
+
+---
+
 ## 教学
 
 - dair-ai  1 小时的讲座，提供了对提示技术，应用程序和工具的全面概述。
   - [视频讲座](https://youtu.be/dOxUroR57xs)
   - [带有代码的笔记本](https://github.com/dair-ai/Prompt-Engineering-Guide/blob/main/notebooks/pe-lecture.ipynb)
   - [幻灯片](https://github.com/dair-ai/Prompt-Engineering-Guide/blob/main/lecture/Prompt-Engineering-Lecture-Elvis.pdf)
-
-
-
----
-
-## 指南
-
-以下是dair-ai 开发的提示工程指南。 dair-ai 指南正在研发中。(暂时我会每三天更新)
-
-- [提示工程-介绍](/guides/prompts-intro.md)
-- [提示工程-基本提示](/guides/prompts-basic-usage.md)
-- [提示工程-高级提示](/guides/prompts-advanced-usage.md)
-- [提示工程-对抗提示](/guides/prompt-adversarial.md)
-- [提示工程-杂项主题](/guides/prompt-miscellaneous.md)
 
 ---
 
