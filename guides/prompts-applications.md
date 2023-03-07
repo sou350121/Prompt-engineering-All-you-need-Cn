@@ -1,17 +1,17 @@
 # Prompt Applications
 
-In this guide we will cover some advanced and interesting ways we can use prompt engineering to perform useful and more advanced tasks. 
+在本指南中，我们将介绍一些高级和有趣的方法，我们可以使用提示工程来执行有用和更高级的任务。
 
-**Note that this section is under heavy development.**
-Topics:
+**请注意，本节正在大力开发中**。
+主题。
 - [Generating Data](#generating-data)
 - [Code as Reasoning](#pal-program-aided-language-models-code-as-reasoning)
 - ...
 
-
 ---
 ## Generating Data
-LLMs have strong capabilities to generate text. Using effective prompt strategies can steer the model to produce better, consistency, and more factual responses. LLMs can also especially useful for generating data which is really useful to run all sorts of experiments. For example, we can use it to generate quick samples for a sentiment classifier like so:
+
+LLMs有很强的生成文本的能力。使用有效的提示策略可以引导模型产生更好的、一致的、更符合事实的反应。LLMs还可以特别用于生成数据，这对运行各种实验非常有用。例如，我们可以用它来为情感分类器快速生成样本，就像这样。
 
 *Prompt:*
 ```
@@ -53,21 +53,21 @@ Q: I just got some terrible news.
 A: Negative
 ```
 
-This is very useful. We actually use this example for a different test in another section of the guides.
+这是很有用的。实际上，我们在指南的另一部分中对一个不同的测试使用这个例子。
 
 ---
 
 ## PAL (Program-Aided Language Models): Code as Reasoning
  
-[Gao et al., (2022)](https://arxiv.org/abs/2211.10435) presents a method that uses LLMs to read natural language problems and generate programs as the intermediate reasoning steps. Coined, program-aided language models (PAL), it differs from chain-of-thought prompting in that instead of using free-form text to obtain solution it offloads the solution step to a programmatic runtime such as a Python interpreter.
+[Gao et al., (2022)](https://arxiv.org/abs/2211.10435) 提出了一种使用LLM来读取自然语言问题并生成程序作为中间推理步骤的方法。称为程序辅助语言模型（PAL），它与思维链提示的不同之处在于，它不是使用自由格式的文本来获得解决方案，而是将解决方案的步骤卸载到一个程序化的运行时间，如Python解释器。
 
 ![](../img/pal.png)
 
-Let's look at an example using LangChain and OpenAI GPT-3. We are interested to develop a simple application that's able to interpret the question being asked and provide an answer by leveraging the Python interpreter. 
+让我们看看一个使用LangChain和OpenAI GPT-3的例子。我们有兴趣开发一个简单的应用程序，它能够通过利用Python解释器来解释所问的问题并提供答案。
 
-Specifically, we are interested to create a functionality that allows the use of the LLM to answer questions that require date understanding. We will provide the LLM a prompt that includes a few exemplars which are adopted from [here](https://github.com/reasoning-machines/pal/blob/main/pal/prompt/date_understanding_prompt.py).  
+具体来说，我们有兴趣创建一个功能，允许使用LLM来回答那些需要理解日期的问题。我们将为LLM提供一个提示，其中包括一些从[这里](https://github.com/reasoning-machines/pal/blob/main/pal/prompt/date_understanding_prompt.py)采用的范例。 
 
-These are the imports we need:
+这些是我们需要的进口。
 
 ```python
 import openai
@@ -78,7 +78,7 @@ from langchain.llms import OpenAI
 from dotenv import load_dotenv
 ```
 
-Let's first configure a few things:
+让我们首先配置一些东西。
 
 ```python
 load_dotenv()
@@ -90,13 +90,13 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
 ```
 
-Setup model instance:
+设置模型实例
 
 ```python
 llm = OpenAI(model_name='text-davinci-003', temperature=0)
 ```
 
-Setup prompt + question:
+设置提示+问题。
 
 ```python
 question = "Today is 27 February 2023. I was born exactly 25 years ago. What is the date I was born in MM/DD/YYYY?"
@@ -156,7 +156,7 @@ exec(llm_out)
 print(born)
 ```
 
-This will output the following: `02/27/1998`
+这将输出以下信息。`02/27/1998`
 
 See full notebook [here](../notebooks/pe-pal.ipynb)
 
