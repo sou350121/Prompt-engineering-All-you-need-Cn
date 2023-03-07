@@ -1,6 +1,6 @@
 # Miscellaneous Topics
 
-In this section, we discuss other miscellaneous and uncategorized topics in prompt engineering. It includes relatively new ideas and approaches that will eventually be moved into the main guides as they become more widely adopted. This section of the guide is also useful to keep up with the latest research papers on prompt engineering.
+在本节中，我们讨论了提示工程中的其他杂项和未分类的主题。它包括相对较新的想法和方法，当它们被更广泛地采用时，最终会被移到主要指南中。指南的这一部分对于了解提示工程的最新研究论文也很有用。
 
 **Note that this section is under heavy development.**
 
@@ -17,19 +17,19 @@ Topic:
 
 ## Active-Prompt
 
-Chain-of-thought (CoT) methods rely on a fixed set of human-annotated exemplars. The problem with this is that the exemplars might not be the most effective examples for the different tasks. To address this, [Diao et al., (2023)](https://arxiv.org/pdf/2302.12246.pdf) recently proposed a new prompting approach called Active-Prompt to adapt LLMs to different task-specific example prompts (annotated with human-designed CoT reasoning).
+思维链（CoT）方法依赖于一组固定的人类注释的范例。这样做的问题是，这些典范可能不是对不同任务最有效的例子。为了解决这个问题，[Diao et al，(2023)](https://arxiv.org/pdf/2302.12246.pdf)最近提出了一种新的提示方法，称为Active-Prompt，以使LLM适应不同任务的特定例子提示（用人类设计的CoT推理来注释）。
 
-Below is an illustration of the approach. The first step is to query the LLM with or without a few CoT examples. *k* possible answers are generated for a set of training questions. An uncertainty metric is calculated based on the *k* answers (disagreement used). The most uncertain questions are selected for annotation by humans. The new annotated exemplars are then used to infer each question. 
+下面是该方法的一个说明。第一步是用或不用一些CoT例子来查询LLM。为一组训练问题生成*k*可能的答案。根据*k*的答案计算出不确定性指标（disagreement used）。最不确定的问题被挑选出来由人类进行注释。然后，新的注释示例被用来推断每个问题。
 
 ![](../img/active-prompt.png)
 
 ---
 ## Directional Stimulus Prompting
-[Li et al., (2023)](https://arxiv.org/abs/2302.11520) proposes a new prompting technique to better guide the LLM in generating the desired summary.
+[Li et al., (2023)](https://arxiv.org/abs/2302.11520) 提出了一种新的提示技术，以更好地指导LLM生成所需的摘要。
 
-A tuneable policy LM is trained to generate the stimulus/hint. Seeing more use of RL to optimize LLMs.
+一个可调控的策略LM被训练来产生刺激/提示。看到了更多使用RL来优化LLM的情况。
 
-The figure below shows how Directional Stimulus Prompting compares with standard prompting. The policy LM can be small and optimized to generate the hints that guide a black-box frozen LLM.
+下图显示了定向刺激提示与标准提示的比较。策略LM可以很小，而且可以优化，以产生指导黑盒冻结LLM的提示。
 
 ![](../img/dsp.jpeg)
 
@@ -38,9 +38,9 @@ Full example coming soon!
 ---
 ## ReAct
 
-[Yao et al., 2022](https://arxiv.org/abs/2210.03629) introduced a framework where LLMs are used to generate both reasoning traces and task-specific actions in an interleaved manner. Generating reasoning traces allow the model to induce, track, and update action plans, and even handle exceptions. The action step allows to interface with and gather information from external sources such as knowledge bases or environments.
+[Yao et al., 2022](https://arxiv.org/abs/2210.03629) 介绍了一个框架，其中LLM被用来以交错的方式生成推理痕迹和特定任务的行动。生成推理痕迹允许模型诱导、跟踪和更新行动计划，甚至处理异常情况。行动步骤允许与外部资源（如知识库或环境）对接并收集信息。
 
-The ReAct framework can allow LLMs to interact with external tools to retrieve additional information that leads to more reliable and factual responses.
+ReAct框架可以让LLM与外部工具互动，以检索更多的信息，从而获得更可靠的、符合事实的反应。
 
 ![](../img/react.png)
 
@@ -49,9 +49,9 @@ Full example coming soon!
 ---
 ## Multimodal CoT Prompting
 
-[Zhang et al. (2023)](https://arxiv.org/abs/2302.00923) recently proposed a multimodal chain-of-thought prompting approach. Traditional CoT focuses on the language modality. In contrast, Multimodal CoT incorporates text and vision into a two-stage framework. The first step involves rationale generation based on multimodal information. This is followed by the second phase, answer inference, which leverages the informative generated rationales.
+[Zhang et al. (2023)](https://arxiv.org/abs/2302.00923) 最近提出了一种多模态的思维链提示方法。传统的CoT着重于语言模式。相比之下，多模态CoT将文本和视觉纳入了一个两阶段的框架。第一步涉及基于多模态信息的理由生成。接下来是第二阶段，答案推理，利用信息生成的理由。
 
-The multimodal CoT model (1B) outperforms GPT-3.5 on the ScienceQA benchmark.
+多模态CoT模型（1B）在ScienceQA基准上的表现超过了GPT-3.5。
 
 ![](../img/multimodal-cot.png)
 
@@ -61,7 +61,7 @@ Further reading:
 ---
 ## GraphPrompts
 
-[Liu et al., 2023](https://arxiv.org/abs/2302.08043) introduces GraphPrompt, a new prompting framework for graphs to improve performance on downstream tasks.
+[Liu et al., 2023](https://arxiv.org/abs/2302.08043) 介绍了GraphPrompt，一个新的图形提示框架，以提高下游任务的性能。
 
 More coming soon!
 
