@@ -409,9 +409,9 @@ APE发现了一个比人类设计的 "让我们一步步思考 "的提示更好�
 
 本文涉及到与提示工程相关的一个重要话题，即自动优化提示的想法。虽然我们在本指南中没有深入探讨这个话题，但如果你对这个话题感兴趣，这里有几篇关键的论文。
 
-- [AutoPrompt](https://arxiv.org/abs/2010.15980) - proposes an approach to automatically create prompts for a diverse set of tasks based on gradient-guided search.
-- [Prefix Tuning](https://arxiv.org/abs/2101.00190) - a lightweight alternative to fine-tuning that prepends a trainable continuous prefix for NLG tasks. 
-- [Prompt Tuning](https://arxiv.org/abs/2104.08691) - proposes a mechanism for learning soft prompts through back propagation.
+- [AutoPrompt](https://arxiv.org/abs/2010.15980) - 提出了一种基于梯度引导搜索的方法，为不同的任务集自动创建提示。
+- [Prefix Tuning](https://arxiv.org/abs/2101.00190) --是一种轻量级的微调替代方案，为NLG任务预置了一个可训练的连续前缀。
+- [Prompt Tuning](https://arxiv.org/abs/2104.08691) - 提出了一种通过反向传播学习软提示的机制。
 
 ---
 [Previous Section (Basic Prompting)](./prompts-basic-usage.md)
