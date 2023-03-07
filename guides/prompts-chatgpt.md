@@ -39,7 +39,7 @@ AI:
 - 指示聊天机器人的**意图**或解释
 - 指示聊天机器人将用于响应的样式或语气的**身份**
 
-上面的简单例子在使用 `text-davinci-003' 的文本补全API中运行良好。最近，OpenAI 宣布了 [ChatGPT APIs](https://openai.com/blog/introducing-chatgpt-and-whisper-apis)，这是一个更强大和更便宜的模型，称为 `gpt-3.5-turbo`，是专门为这种类型的功能（聊天完成）建立的。事实上，OpenAI推荐这是他们的最佳模型，即使是在非聊天用例中。 使用ChatGPT APIs的其他好处是大大降低了成本（90%）和效率。
+上面的简单例子在使用 text-davinci-003 的文本补全API中运行良好。最近，OpenAI 宣布了[ChatGPT APIs](https://openai.com/blog/introducing-chatgpt-and-whisper-apis)，这是一个更强大和更便宜的模型，称为 `gpt-3.5-turbo`，是专门为这种类型的功能（聊天完成）建立的。事实上，OpenAI推荐这是他们的最佳模型，即使是在非聊天用例中。 使用ChatGPT APIs的其他好处是大大降低了成本（90%）和效率。
 
 像Snap Inc.和Instacart这样的大公司已经在其产品上整合了由ChatGPT提供的对话功能，范围包括个性化推荐和开放式购物目标。
 
