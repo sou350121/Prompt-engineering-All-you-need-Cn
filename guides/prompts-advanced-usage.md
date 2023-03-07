@@ -1,7 +1,7 @@
 # Advanced Prompting
-By this point, it should be obvious that it helps to improve prompts to get better results on different tasks. That's the whole idea behind prompt engineering. 
+很明显，它有助于改进提示以在不同任务上获得更好的结果。 这就是提示工程背后的全部理念。
 
-While those examples were fun, let's cover a few concepts more formally before we jump into more advanced concepts. 
+虽然这些示例很有趣，但在我们进入更高级的概念之前，让我们更正式地介绍一些概念。
 
 Topics:
 
@@ -14,8 +14,9 @@ Topics:
 - [Automatic Prompt Engineer](#automatic-prompt-engineer-ape)
 
 ---
-## Zero-Shot Prompting
-LLMs today trained on large amounts of data and tuned to follow instructions, are capable of performing tasks zero-shot. We actually tried a few zero-shot examples in the previous section. Here is one of the examples we used:
+## Zero-Shot Prompting 零样本零样本
+
+今天的 LLMs 接受了大量数据的训练并调整以遵循指令，能够 Zero-Shot Prompting 零样本地执行任务。 我们实际上在上一节中尝试了一些零样本示例。 这是我们使用的示例之一：
 
 *Prompt:*
 ```
@@ -30,14 +31,14 @@ Sentiment:
 Neutral
 ```
 
-Note that in the prompt above we didn't provide the model any examples -- that's the zero-shot capabilities at work. When zero-shot doesn't work, it's recommended to provide demonstrations or examples in the prompt. Below we discuss the approach known as few-shot prompting.
+请注意，在上面的提示中，我们没有为模型提供任何示例——这是工作中的零样本功能。 当 zero-shot 不起作用时，建议在提示中提供演示或示例。 下面我们将讨论称为小样本金的方法。
 
 ---
-## Few-Shot Prompting
+## Few-Shot Prompting 小样本提示
 
-While large-language models already demonstrate remarkable zero-shot capabilities, they still fall short on more complex tasks when using the zero-shot setting. To improve on this, few-shot prompting is used as a technique to enable in-context learning where we provide demonstrations in the prompt to steer the model to better performance. The demonstrations serve as conditioning for subsequent examples where we would like the model to generate a response. 
+虽然大型语言模型已经展示了卓越的零样本能力，但在使用零样本设置时它们仍然无法完成更复杂的任务。 为了改进这一点，使用 Few-Shot Prompting 少量提示作为一种技术来启用上下文学习，我们在提示中提供演示以引导模型获得更好的性能。 这些演示用作后续示例的条件，我们希望模型在这些示例中生成响应。
 
-Let's demonstrate few-shot prompting via an example that was presented in [Brown et al. 2020](https://arxiv.org/abs/2005.14165). In the example, the task is to correctly use a new word in a sentence.
+Let's demonstrate few-shot prompting via an example that was presented in [Brown et al. 2020](https://arxiv.org/abs/2005.14165). 在示例中，任务是在句子中正确使用新词。
 
 *Prompt:*
 ```
@@ -53,16 +54,15 @@ the word farduddle is:
 When we won the game, we all started to farduddle in celebration.
 ```
 
-We can clearly observe that the model has somehow learned how to perform the task by providing it just one example (i.e., 1-shot). For more difficult tasks, we can experiment with increasing the demonstrations (e.g., 3-shot, 5-shot, 10-shot, etc.). 
+我们可以清楚地观察到，该模型仅通过提供一个示例（即 1-shot）就以某种方式学会了如何执行任务。 对于更困难的任务，我们可以尝试增加演示（例如，3-shot、5-shot、10-shot 等）。
 
 Following the findings from [Min et al. (2022)](https://arxiv.org/abs/2202.12837), here a few more tips about demonstrations/exemplars when doing few-shot:
 
-- "the label space and the distribution of the input text specified by the demonstrations are both key (regardless of whether the labels are correct for individual inputs)"
-- the format you use also plays a key role in performance, even if you just use random labels, this is much better than no labels at all.  
-- additional results show that selecting random labels from a true distribution of labels (instead of a uniform distribution) also helps.
+- “演示指定的**标签空间**和输入文本的分布都是关键（无论标签是否对单个输入正确）”
+- 你使用的**格式**对性能也起着关键作用，即使你只是使用随机标签，这也比根本没有标签要好得多。
+- 额外的结果表明，从标签的真实分布（而不是均匀分布）中选择随机标签也有帮助。
 
-Let's try out a few examples. Let's first try an example with random labels (meaning the labels Negative and Positive are randomly assigned to the inputs):
-
+让我们尝试几个例子。 让我们首先尝试一个带有随机标签的示例（意味着标签 Negative 和 Positive 随机分配给输入）
 *Prompt:*
 ```
 This is awesome! // Negative
@@ -76,7 +76,7 @@ What a horrible show! //
 Negative
 ```
 
-We still get the correct answer, even though the labels have been randomized. Note that we also kept the format, which helps too. In fact, with further experimentation it seems the newer GPT models we are experimenting with are becoming more robust to even random format. Example:
+我们仍然得到正确的答案，即使标签是随机的。 请注意，我们还保留了格式，这也有帮助。 事实上，随着进一步的实验，我们正在实验的较新的 GPT 模型似乎对随机格式也变得更加稳健。 例子：
 
 *Prompt:*
 ```
@@ -92,11 +92,11 @@ What a horrible show! --
 Negative
 ```
 
-There is no consistency in the format above but the model still predicted the correct label. We have to conduct more thorough analysis to confirm if this holds true for different and more complex tasks, including different variations of prompts.
+上面的格式不一致，但模型仍然预测了正确的标签。 我们必须进行更彻底的分析，以确认这是否适用于不同的和更复杂的任务，包括不同的提示变体。
 
 ### Limitations of Few-shot Prompting
 
-Standard few-shot prompting works well for many tasks but is still not a perfect technique especially when dealing with more complex reasoning tasks. Let's demonstrate why this is the case. Do you recall the previous example where we provided the following task:
+标准的小样本提示适用于许多任务，但仍然不是一种完美的技术，尤其是在处理更复杂的推理任务时。 让我们来说明为什么会这样。 还记得前面的例子吗，我们提供了以下任务：
 
 ```
 The odd numbers in this group add up to an even number: 15, 32, 5, 13, 82, 7, 1. 
@@ -110,9 +110,9 @@ If we try this again, the model outputs the following:
 Yes, the odd numbers in this group add up to 107, which is an even number.
 ```
 
-This is not the correct response, which not only highlights the limitations of these systems but that there is a need for more advanced prompt engineering. 
+这不是正确的回应，它不仅突出了这些系统的局限性，而且需要更高级的提示工程。
 
-Let's try to add some examples to see if few-shot prompting improves the results.
+让我们尝试添加一些示例以查看小样本提示是否可以改善结果。
 
 *Prompt:*
 ```
@@ -137,15 +137,15 @@ A:
 The answer is True.
 ```
 
-That didn't work. It seems like few-shot prompting is not enough to get reliable responses for this type of reasoning problem. The example above provides basic information on the task. If you take a closer look, the type of task we have introduced involves a few more reasoning steps. In other words, it might help if we break the problem down into steps and demonstrate that to the model. More recently, [chain-of-thought (CoT) prompting](https://arxiv.org/abs/2201.11903) has been popularized to address more complex arithmetic, commonsense, and symbolic reasoning tasks.
+那没有用。 对于此类推理问题，似乎少样本提示不足以获得可靠的响应。 上面的示例提供了有关任务的基本信息。 如果您仔细观察，我们介绍的任务类型涉及更多的推理步骤。 换句话说，如果我们将问题分解为多个步骤并向模型演示，可能会有所帮助。 最近，[思维链 (CoT) 提示](https://arxiv.org/abs/2201.11903) 得到普及，用于解决更复杂的算术、常识和符号推理任务。
 
-Overall, it seems that providing examples is useful for solving some tasks. When zero-shot prompting and few-shot prompting are not sufficient, it might mean that the whatever was learned by the model isn't enough to do well at the task. From here it is recommended to start thinking about fine-tuning your own models or experimenting with more advanced prompting techniques. Up next we talk about one of the popular prompting techniques called chain-of-thought prompting which has gained a lot of popularity. 
+总的来说，提供示例似乎对解决某些任务很有用。 当零样本提示和少样本提示不够时，这可能意味着模型学到的任何东西都不足以完成任务。 建议从这里开始考虑微调您自己的模型或尝试更高级的提示技术。 接下来我们将讨论一种**流行的提示技术**，称为 Chain-of-Thought Prompting 思维链提示，它已经很受欢迎。
 
 ---
 
 ## Chain-of-Thought Prompting
 
-Introduced in [Wei et al. (2022)](https://arxiv.org/abs/2201.11903), chain-of-thought (CoT) prompting enables complex reasoning capabilities through intermediate reasoning steps. You can combine it with few-shot prompting to get better results on more complex tasks that require reasoning before responding.
+介绍于 [Wei et al. (2022)](https://arxiv.org/abs/2201.11903), 思维链 (CoT) 提示通过中间推理步骤启用复杂的推理能力。 您可以将它与少量提示结合使用，以便在响应前需要推理的更复杂任务中获得更好的结果。
 
 *Prompt:*
 ```
@@ -170,7 +170,7 @@ A:
 Adding all the odd numbers (15, 5, 13, 7, 1) gives 41. The answer is False.
 ```
 
-Wow! We can see a perfect result when we provided the reasoning step. In fact, we can solve this task by providing even fewer examples, i.e., just one example seems enough:
+当我们提供推理步骤时，我们可以看到一个完美的结果。 事实上，我们可以通过提供更少的例子来解决这个任务，即一个例子似乎就足够了：
 
 *Prompt:*
 ```
@@ -186,13 +186,13 @@ A:
 Adding all the odd numbers (15, 5, 13, 7, 1) gives 41. The answer is False.
 ```
 
-Keep in mind that the authors claim that this is an emergent ability that arises with sufficiently large language models. 
+请记住，作者声称这是一种随着足够大的语言模型而出现的新兴能力。
 
 ---
 
 ## Zero-Shot CoT
 
-One recent idea that came out more recently is the idea of [zero-shot CoT](https://arxiv.org/abs/2205.11916) (Kojima et al. 2022) that essentially involves adding "Let's think step by step" to the original prompt. Let's try a simple problem and see how the model performs:
+最近出来的 [zero-shot CoT](https://arxiv.org/abs/2205.11916) (Kojima et al. 2022) 基本上是在原来的提示中加入 "让我们一步一步地思考"。让我们尝试一个简单的问题，看看模型的表现如何。
 
 *Prompt:*
 ```
@@ -204,7 +204,7 @@ I went to the market and bought 10 apples. I gave 2 apples to the neighbor and 2
 11 apples
 ```
 
-The answer is incorrect! Now Let's try with the special prompt. 
+答案是不正确的! 现在让我们用特别提示来试试。
 
 *Prompt:*
 ```
@@ -221,15 +221,15 @@ Then you bought 5 more apples, so now you had 11 apples.
 Finally, you ate 1 apple, so you would remain with 10 apples.
 ```
 
-It's actually impressive that this simple prompt is effective at this task. This is particularly useful where you don't have too many examples to use in the prompt.
+实际上令人印象深刻的是，这个简单的提示能有效地完成这项任务。在你没有太多的例子可以在提示中使用时，这一点尤其有用。
 
 ---
 
 ## Self-Consistency
 
-Perhaps one of the more advanced techniques out there for prompt engineering is self-consistency. Proposed by [Wang et al. (2022)](https://arxiv.org/pdf/2203.11171.pdf), self-consistency aims "to replace the naive greedy decoding used in chain-of-thought prompting". The idea is to sample multiple, diverse reasoning paths through few-shot CoT, and use the generations to select the most consistent answer. This helps to boost the performance of CoT prompting on tasks involving arithmetic and commonsense reasoning.
+也许有一种更先进的提示工程技术是 self-consistency. [Wang et al. (2022)](https://arxiv.org/pdf/2203.11171.pdf)提出， Self-Consistency旨在 "取代思维链提示中使用的天真贪婪的解码"。它的想法是通过少量的CoT对多个不同的推理路径进行抽样，并使用世代来选择最一致的答案。这有助于提高CoT提示在涉及算术和常识性推理的任务上的表现。
 
-Let's try the following example for arithmetic reasoning:
+让我们试试下面这个算术推理的例子。
 
 *Prompt:*
 ```
@@ -242,7 +242,7 @@ I’m 70 how old is my sister?
 35
 ```
 
-The output is obviously wrong! How may we improve this with self-consistency? Let's try it out. We will use the few-shot exemplars from Wang et al. 2022 (Table 17):
+输出结果显然是错误的。 我们可能如何用Self-Consistency 来改善这个问题呢？ 让我们来试试:
 
 *Prompt:*
 ```
@@ -301,16 +301,16 @@ When the narrator was 6, his sister was half his age, which is 3. Now that the n
 When I was 6 my sister was half my age, so she was 3. Now I am 70, so she is 70/2 = 35. The answer is 35.
 ```
 
-Computing for the final answer involves a few steps (check out the paper for the details) but for the sake of simplicity, we can clearly see that there is already a majority answer emerging so that would essentially become the final answer. 
+计算最终答案涉及几个步骤（详情请查阅论文），但为了简单起见，我们可以清楚地看到，已经有一个多数人的答案出现，所以这基本上会成为最终答案。
 
 ---
 ## Generated Knowledge Prompting
 
-LLMs continue to be improved and one popular technique include the ability to incorporate knowledge or information to help the model make more accurate predictions. 
+利用类似的想法，模型是否也可以在做出预测之前生成知识？
 
-Using a similar idea, can the model also be used to generate knowledge before making a prediction? That's what is attempted in the paper by [Liu et al. 2022](https://arxiv.org/pdf/2110.08387.pdf) -- generate knowledge to be used as part of the prompt. In particular, how helpful is this for tasks such as commonsense reasoning?
+这就是[Liu et al. 2022](https://arxiv.org/pdf/2110.08387.pdf)的论文中所尝试的 -- 生成知识，作为提示的一部分。特别是，这对常识性推理等任务有多大帮助？
 
-Let's try a simple prompt:
+让我们试试一个简单的提示。
 
 *Prompt:*
 ```
@@ -322,9 +322,9 @@ Part of golf is trying to get a higher point total than others. Yes or No?
 Yes.
 ```
 
-This type of mistakes reveal the limitations of LLMs to perform tasks that require more knowledge about the world. How do we improve this with knowledge generation?
+这类错误揭示了LLM在执行需要更多世界知识的任务时的局限性。我们如何用知识生成来改善这一点呢？
 
-First we generate a few "knowledges":
+首先，我们生成一些 "知识"。
 
 *Prompt:*
 ```
@@ -357,9 +357,9 @@ The objective of golf is to play a set of holes in the least number of strokes. 
 Golf is a precision club-and-ball sport in which competing players (or golfers) use many types of clubs to hit balls into a series of holes on a course using the fewest number of strokes. The goal is to complete the course with the lowest score, which is calculated by adding up the total number of strokes taken on each hole. The player with the lowest score wins the game.
 ```
 
-We are using the prompt provided in the paper by [Liu et al. 2022](https://arxiv.org/pdf/2110.08387.pdf).
+我们使用的是[Liu et al. 2022](https://arxiv.org/pdf/2110.08387.pdf)论文中提供的提示。
 
-Next step is to integrate the knowledge and get a prediction. I reformatted the question into QA format to guide the answer format.
+下一步是整合知识，得到预测。我把问题重新格式化为QA格式，以指导答案的格式。
 
 *Prompt:*
 ```
@@ -389,7 +389,7 @@ Explain and Answer:
 Yes, part of golf is trying to get a higher point total than others. Each player tries to complete the course with the lowest score, which is calculated by adding up the total number of strokes taken on each hole. The player with the lowest score wins the game.
 ```
 
-Some really interesting things happened with this example. In the first answer, the model was very confident but in the second not so much. I simplify the process for demonstration purposes but there are few more details to consider when arriving to the final answer. Check out the paper for more.
+这个例子中发生了一些非常有趣的事情。在第一个答案中，该模型非常自信，但在第二个答案中却不那么自信了。为了演示，我简化了这个过程，但是在得出最终答案的时候，还有一些细节需要考虑。请看论文中的内容。
 
 ---
 
@@ -397,17 +397,17 @@ Some really interesting things happened with this example. In the first answer, 
 
 ![](../img/APE.png)
 
-[Zhou et al., (2022)](https://arxiv.org/abs/2211.01910) propose automatic prompt engineer (APE) a framework for automatic instruction generation and selection. The instruction generation problem is framed as natural language synthesis addressed as a black-box optimization problem using LLMs to generate and search over candidate solutions. 
+[Zhou et al., (2022)](https://arxiv.org/abs/2211.01910)提出自动提示工程师(APE)是一个自动指令生成和选择的框架。指令生成问题被看作是自然语言合成问题，是一个使用LLMs生成和搜索候选解决方案的黑箱优化问题。
 
-The first step involves a large language model (as inference model) that is given output demonstrations to generate instruction candidates for a task. These candidate solution will guide the search procedure. The instructions are executed using a target model, and then the most appropriate instruction is selected based on computed evaluation scores. 
+第一步涉及到一个大型的语言模型（作为推理模型），它被赋予输出示范，为一个任务生成指令候选方案。这些候选方案将指导搜索程序。使用目标模型执行指令，然后根据计算的评价分数选择最合适的指令。
 
-APE discovers a better zero-shot CoT prompt than the human engineered "Let's think step by step" prompt from (Kojima et al., 2022).
+APE发现了一个比人类设计的 "让我们一步步思考 "的提示更好的零拍CoT提示（Kojima等人，2022）。
 
-The prompt "Let's work this out it a step by step to be sure we have the right answer." elicits chain-of-though reasoning and improves performance on the MultiArith and GSM8K benchmarks:
+提示 "让我们一步一步地解决这个问题，以确保我们有正确的答案。"引起了连环推理，提高了MultiArith和GSM8K基准的性能。
 
 ![](../img/ape-zero-shot-cot.png)
 
-This paper touches on an important topic related to prompt engineering which is this idea of automatically optimizing prompts. While we don't go deep in this topic in this guide, here are few key papers if you are interested in the topic:
+本文涉及到与提示工程相关的一个重要话题，即自动优化提示的想法。虽然我们在本指南中没有深入探讨这个话题，但如果你对这个话题感兴趣，这里有几篇关键的论文。
 
 - [AutoPrompt](https://arxiv.org/abs/2010.15980) - proposes an approach to automatically create prompts for a diverse set of tasks based on gradient-guided search.
 - [Prefix Tuning](https://arxiv.org/abs/2101.00190) - a lightweight alternative to fine-tuning that prepends a trainable continuous prefix for NLG tasks. 
