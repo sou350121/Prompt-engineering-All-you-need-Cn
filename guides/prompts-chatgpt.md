@@ -12,7 +12,7 @@ Topics:
 ---
 ## ChatGPT Introduction
 
-ChatGPT是一个新的模型[由OpenAI训练](https://openai.com/blog/chatgpt)，它有能力以对话的方式进行互动。这个模型被训练成能够遵循提示中的指令，在对话的背景下提供适当的回应。ChatGPT可以帮助回答问题，建议食谱，用某种风格写歌词，生成代码，等等。
+ChatGPT是一个新的模型 [由OpenAI训练](https://openai.com/blog/chatgpt)，它有能力以对话的方式进行互动。这个模型被训练成能够遵循提示中的指令，在对话的背景下提供适当的回应。ChatGPT可以帮助回答问题，建议食谱，用某种风格写歌词，生成代码，等等。
 
 ChatGPT是使用人类反馈强化学习（RLHF）来训练的。虽然这个模型比以前的GPT迭代能力强很多（而且还经过训练以减少有害和不真实的输出），但它仍然有局限性。让我们通过具体的例子来介绍一些能力和限制。
 
@@ -39,12 +39,13 @@ AI:
 - 指示聊天机器人的**意图**或解释
 - 指示聊天机器人将用于响应的样式或语气的**身份**
 
-上面的简单例子在使用`text-davinci-003'的文本补全API中运行良好。最近，OpenAI[宣布了ChatGPT APIs](https://openai.com/blog/introducing-chatgpt-and-whisper-apis)，这是一个更强大和更便宜的模型，称为`gpt-3.5-turbo`，是专门为这种类型的功能（聊天完成）建立的。事实上，OpenAI推荐这是他们的最佳模型，即使是在非聊天用例中。 使用ChatGPT APIs的其他好处是大大降低了成本（90%）和效率。
+上面的简单例子在使用 `text-davinci-003' 的文本补全API中运行良好。最近，OpenAI 宣布了 [ChatGPT APIs](https://openai.com/blog/introducing-chatgpt-and-whisper-apis)，这是一个更强大和更便宜的模型，称为 `gpt-3.5-turbo`，是专门为这种类型的功能（聊天完成）建立的。事实上，OpenAI推荐这是他们的最佳模型，即使是在非聊天用例中。 使用ChatGPT APIs的其他好处是大大降低了成本（90%）和效率。
 
 像Snap Inc.和Instacart这样的大公司已经在其产品上整合了由ChatGPT提供的对话功能，范围包括个性化推荐和开放式购物目标。
 
 ---
 ## Conversations with ChatGPT
+
 为了开始展示ChatGPT的能力，我们将使用上面的聊天机器人助手例子，并讨论结果。与`text-davinci-003`相比，支持ChatGPT的`gpt-3.5-turbo`模型使用聊天格式作为输入。该模型期望有一系列的信息作为输入，并使用这些信息来生成一个响应。
 
 *Input:*
@@ -60,7 +61,7 @@ USER: Can you tell me about the creation of black holes?
 ASSISTANT: Of course! Black holes are created when a massive star runs out of fuel and collapses under its own gravity. This collapse causes the star to become incredibly dense, with a gravitational field so strong that not even light can escape it. This point of no return is known as the event horizon. Once a star crosses the event horizon, it is considered a black hole...
 ```
 
-请注意，在上面的例子中，我已经简化了输入和输出，但ChatGPT聊天完成API要求消息必须是特定的格式。我在下面添加了一个快照，说明这个例子在OpenAI Playground中使用 "聊天模式 "会是什么样子。
+请注意，在上面的例子中，我已经简化了输入和输出，但ChatGPT聊天完成API要求消息必须是特定的格式。我在下面添加了一个快照，说明这个例子在OpenAI Playground中使用 "聊天模式" 会是什么样子。
 
 ![](../img/chatgpt-1.png)
 
@@ -79,7 +80,7 @@ openai.ChatCompletion.create(
     ]
 )
 ```
-事实上，未来开发者与ChatGPT的互动方式有望通过[聊天标记语言](https://github.com/openai/openai-python/blob/main/chatml.md)（简称ChatML）来完成。
+事实上，未来开发者与ChatGPT的互动方式有望通过 [Chat Markup Language](https://github.com/openai/openai-python/blob/main/chatml.md)（简称ChatML）来完成。
 
 聊天格式可以实现多轮对话，但它也支持类似于我们在`text-davinci-003`中使用的单轮任务。这意味着我们可以使用ChatGPT来执行类似于我们为原始GPT模型所演示的任务。例如，让我们尝试用ChatGPT执行以下问题的回答任务。
 
