@@ -100,7 +100,7 @@ Answer:
 ASSISTANT: Mice.
 ```
 
-请记住，我添加`USER'和`ASSISTANT'标签是为了更好地演示如何使用ChatGPT执行任务。下面是使用Playground的例子。
+请记住，我添加'USER'和'ASSISTANT'标签是为了更好地演示如何使用ChatGPT执行任务。下面是使用Playground的例子。
 
 ![](../img/chatgpt-classic.png)
 
